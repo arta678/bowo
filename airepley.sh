@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#ROSI
 
 #program sederhana 
 #buatan arta wiguna
