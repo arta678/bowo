@@ -1,11 +1,11 @@
-sudo airmon-ng start wlp9s0
+#sudo airmon-ng start wlp9s0
 
 echo  "1 = BUjANGRESIDENCE";
 echo  "2 = BUjANGRESIDENCE_plus";
+echo  "3 = KELUAR;"
 
 
-
-read  -p "Pilih AP Target (1/2) :" monitor
+read  -p "Pilih AP Target :" monitor
 #if [[ $monitor==2 ]]; then
 #	target="50:64:2B:25:F8:AB";
 #elif [[ $monitor == 1 ]]; then
@@ -14,7 +14,7 @@ read  -p "Pilih AP Target (1/2) :" monitor
 
 case $monitor in
 	1 )
-		target="50:64:2B:25:F8:AB";;
+		target="98:DE:D0:BD:0F:E0";;
 	2 )
 		target="50:64:2B:25:F8:AB";;
 	3 )
