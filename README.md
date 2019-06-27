@@ -1,5 +1,5 @@
 # BOWO
-scrip ini digunakan  untuk mempermudah dalam melakukan monitoring wireless
+script ini digunakan  untuk mempermudah dalam melakukan monitoring wireless
 scrip ini berjalan pada ubuntu 16.04 dengan interface wlp9s0. 
 untuk melihat interface pada linux kalian,ketikkan 
 
