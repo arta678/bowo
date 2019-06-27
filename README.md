@@ -5,7 +5,9 @@ untuk melihat interface pada linux kalian,ketikkan
 
 ifconfig
 
-
+Tampilan Menu
+![alt text](https://github.com/arta678/bowo/blob/master/gambar/menu1.png)
+![alt text](https://github.com/arta678/bowo/blob/master/gambar/menu2.png)
 _______________________________________
 INSTALLASI 
 
