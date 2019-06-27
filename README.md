@@ -11,17 +11,9 @@ Tampilan Menu
 _______________________________________
 INSTALLASI 
 
-<<<<<<< HEAD
-git clone https://github.com/arta678/bowo.git 
-cd bowo
-chmod +x install.sh bowo.sh
-sudo ./install.sh
-sudo ./bowo.sh
-=======
 git clone https://github.com/arta678/bowo.git  
 cd bowo  
 chmod +x install.sh bowo.sh  
 ./install.sh  
 ./bowo.sh
->>>>>>> c540859e5fff176da1a9a6dfd2f42b3f45de8067
-_______________________________________
+
