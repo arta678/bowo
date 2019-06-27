@@ -14,6 +14,6 @@ INSTALLASI
 git clone https://github.com/arta678/bowo.git  
 cd bowo  
 chmod +x install.sh bowo.sh  
-./install.sh  
-./bowo.sh
+sudo ./install.sh  
+sudo ./bowo.sh
 
